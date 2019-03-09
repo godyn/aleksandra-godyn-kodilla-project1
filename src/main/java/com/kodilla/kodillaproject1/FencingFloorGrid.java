@@ -1,5 +1,7 @@
 package com.kodilla.kodillaproject1;
 
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -10,8 +12,10 @@ import java.util.Map;
 
 import static com.kodilla.kodillaproject1.Controller.clickOnBox;
 
+public class Grid1 {
 
-public class Boxes{
+    private Grid1() {
+    }
 
     public static HashMap<StackPane, Integer> stackPaneHashMap = new HashMap<StackPane, Integer>();
 
@@ -39,19 +43,47 @@ public class Boxes{
 
     static {
 
-        stackPaneHashMap.put(stackPane1, 0);
-        stackPaneHashMap.put(stackPane2, 0);
-        stackPaneHashMap.put(stackPane3, 0);
-        stackPaneHashMap.put(stackPane4, 0);
-        stackPaneHashMap.put(stackPane5, 0);
-        stackPaneHashMap.put(stackPane6, 0);
-        stackPaneHashMap.put(stackPane7, 0);
-        stackPaneHashMap.put(stackPane8, 0);
-        stackPaneHashMap.put(stackPane9, 0);
+        stackPaneHashMap.put(stackPane1, Symbol.EMPTY.number);
+        stackPaneHashMap.put(stackPane2, Symbol.EMPTY.number);
+        stackPaneHashMap.put(stackPane3, Symbol.EMPTY.number);
+        stackPaneHashMap.put(stackPane4, Symbol.EMPTY.number);
+        stackPaneHashMap.put(stackPane5, Symbol.EMPTY.number);
+        stackPaneHashMap.put(stackPane6, Symbol.EMPTY.number);
+        stackPaneHashMap.put(stackPane7, Symbol.EMPTY.number);
+        stackPaneHashMap.put(stackPane8, Symbol.EMPTY.number);
+        stackPaneHashMap.put(stackPane9, Symbol.EMPTY.number);
 
-        for(Map.Entry<StackPane, Integer> entry: stackPaneHashMap.entrySet()){
+        for (Map.Entry<StackPane, Integer> entry : stackPaneHashMap.entrySet()) {
             entry.getKey().addEventHandler(MouseEvent.MOUSE_CLICKED, clickOnBox);
         }
     }
+
+    public static GridPane getGrid1() {
+        Image image = new Image("file:/Users/aleksandragodyn/PROGRAMMING/PROJECTS/kodilla-project1/src/main/resources/background.png");
+
+        BackgroundSize backgroundSize = new BackgroundSize(670, 670, false, false, false, false);
+        BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
+        Background background = new Background(backgroundImage);
+
+        GridPane grid = new GridPane();
+        grid.setBackground(background);
+        grid.setAlignment(Pos.CENTER);
+        grid.setPadding(new Insets(32, 100, 63, 70));
+        grid.setHgap(20);
+        grid.setVgap(18);
+
+        grid.add(stackPane1, 1, 1);
+        grid.add(stackPane2, 2, 1);
+        grid.add(stackPane3, 3, 1);
+        grid.add(stackPane4, 1, 2);
+        grid.add(stackPane5, 2, 2);
+        grid.add(stackPane6, 3, 2);
+        grid.add(stackPane7, 1, 3);
+        grid.add(stackPane8, 2, 3);
+        grid.add(stackPane9, 3, 3);
+
+        return grid;
+    }
+
 }
 
