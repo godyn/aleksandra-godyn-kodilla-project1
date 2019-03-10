@@ -12,9 +12,9 @@ import java.util.Map;
 
 import static com.kodilla.kodillaproject1.Controller.clickOnBox;
 
-public class Grid1 {
+public class FencingFloorGrid {
 
-    private Grid1() {
+    private FencingFloorGrid() {
     }
 
     public static HashMap<StackPane, Integer> stackPaneHashMap = new HashMap<StackPane, Integer>();
@@ -58,7 +58,7 @@ public class Grid1 {
         }
     }
 
-    public static GridPane getGrid1() {
+    public static GridPane getFencingFloorGrid() {
         Image image = new Image("file:/Users/aleksandragodyn/PROGRAMMING/PROJECTS/kodilla-project1/src/main/resources/background.png");
 
         BackgroundSize backgroundSize = new BackgroundSize(670, 670, false, false, false, false);

@@ -9,10 +9,10 @@ import javafx.scene.text.Text;
 import static com.kodilla.kodillaproject1.StartMenu.*;
 import static com.kodilla.kodillaproject1.TicTacToe.*;
 
-public class Grid2 {
+public class SummaryGrid {
 
 
-    public static GridPane getGrid2() {
+    public static GridPane getSummaryGrid() {
 
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER_LEFT);
@@ -20,17 +20,17 @@ public class Grid2 {
         grid.setHgap(5);
         grid.setVgap(10);
 
-        Text round = new Text("Round "+roundNumber+"/3");
+        Text round = new Text("Round "+gameStatus.getRoundNumber()+"/3");
         round.setFont(Font.font("Geneva", 22));
         Text score = new Text("Score");
         Text player = new Text();
-        Text computer = new Text("Computer: "+computerScore);
+        Text computer = new Text("Computer: "+gameStatus.getComputerScore());
 
         if(textFieldName.getText().equals("")){
-            player.setText("You: "+playerScore);
+            player.setText("You: "+gameStatus.getPlayerScore());
         }
         else {
-            player.setText(textFieldName.getText() + ": " + playerScore);
+            player.setText(textFieldName.getText() + ": " + gameStatus.getPlayerScore());
         }
 
         grid.add(round, 1,1);

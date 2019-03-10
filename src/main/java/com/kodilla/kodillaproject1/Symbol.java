@@ -1,9 +1,7 @@
 package com.kodilla.kodillaproject1;
 
-
-public class Symbols {
-
     public enum Symbol{
+
         EMPTY(0),
         CROSS(1),
         CIRCLE(2);
@@ -15,4 +13,4 @@ public class Symbols {
         }
     }
 
-}
+
